@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>var, let and const</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+      table,th,td{
+        border: 1px solid red;
+      }
+      th,td{
+        padding:8px;
+      }
+    </style>
+</head>
+<body>
+    <h1 align="center">var, let and const</h1>
+    <h3><mark>Press F12 to see output in console.</mark></h3>
+    <h3>Difference Between var, let and const :</h3>
+    <table style="width:100%">
+    <tr><th>var</th><th>let</th><th>const</th></tr>
+    <tr>
+      <td>var declarations are globally scoped or function scoped.</td>
+      <td colspan="2"align="center">let and const are block scoped.</td>
+    </tr> 
+    <tr>
+      <td>var variables can be updated and re-declared within its scope.</td>
+      <td>let variables can be updated but not re-declared.</td>
+      <td>const variables can neither be updated nor re-declared.</td>
+    </tr>
+    </table> 
+    <script>
+        // global variable
+        var x; 
+        x=10;
+        var name= "Pravin SM"
+        console.log("Value of x is ",x);
+
+        // objects
+        var a ={name:"pravin",dept:"cse"}
+        var b ={name:"manoj",dept:"ece"}
+        console.log({a,b});
+        console.table({a,b});
+
+        {
+            let name="Pravin";// loacl scope 
+            console.log("let 'Name' : ",name); 
+        }
+        console.log("var 'Name' : ",name);// global "name" printed here.
+        
+	const pi=3.14;
+        console.log("Const 'pi' :",pi);
+        pi=22/7;// invalid assignment to const 'pi'
+      
+    </script>
+</body>
+</html>
