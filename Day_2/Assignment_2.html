@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>String & Array methods</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+  <h1 align="center">String & Array methods</h1>
+  <h3><mark>Press F12 to see output in console.</mark></h3>
+  <script>
+	var fruits = ["Banana", "Orange", "Apple", "Mango"]; // Array
+	var str = "Hello World"; // String
+	
+	//String Search()
+	console.log(str.search("World"));//search for index of first letter of word specified.
+
+	//Extracting from string
+	console.log("Silce : "+str.slice(0,6));//slice(start,end)
+	console.log("Substring : "+str.substring(6,11));//substring(start,end)
+	console.log("Substr : "+str.substr(0,11));//substr(start,length)
+
+	//The concat() Method
+	str=str.concat(" and ","World");
+	console.log("Concatenation : "+str);
+
+	//Replace() the string
+	console.log("Replace : "+str.replace("World","Everyone"));
+	console.log("Replace with '/i' flag : "+str.replace(/world/i,"Universe"));//to avoid case sensitivity
+	console.log("Replace with '/g' flag : "+str.replace(/world/ig,"Universe"));//to replace all matching
+
+	//split()	
+	var txt = "a,b,c,d,e"; // String
+	var arr = txt.split(","); // String to Array
+	console.log(arr);
+
+//-------------------------------------------------------------------------------------------------------------------------------------------//
+
+	//Converting Arrays to Strings
+	console.log(fruits.toString());
+	console.log(fruits.join("-"));
+	
+	//pop out last element
+	console.log("Pop : "+fruits.pop());
+	
+	//push element at last
+	console.log("Push : "+fruits.push("Kiwi"));
+	
+	//Shifting Elements	
+	console.log("Shift : "+fruits.shift());   //removes first element
+	console.log("Unshift : "+fruits.unshift("Grapes")); //add element at beginning
+	console.log(fruits);
+
+	//Splicing an Array
+	fruits.splice(2,0,"Mango"); // add Mango at index 2
+	console.log(fruits);
+        console.log("Splice remove : "+fruits.splice(1,1)); //removes Orange
+	console.log(fruits)
+
+	//Concatenating Arrays
+	var other_fruits= ["Litche","Guava"]
+	fruits=fruits.concat(other_fruits);
+	console.log(fruits);
+
+	//Slicing Arrays
+	console.log(fruits.slice(1,5));
+
+  </script>  
+</body>
+</html>
