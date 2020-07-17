@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Even or Odd</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+  <h1 align="center">Even or Odd</h1>
+  <h3><mark>Press F12 to see output in console.</mark></h3>
+  <script>
+      let number = +prompt("Enter a number: ");
+      let even_odd = function(num){
+        if(num==0){
+	  console.log(`The number entered is ${num} and Number is neither even nor odd.`);
+	}
+	else{
+	  if(num%2==0){
+	    console.log(`The number entered is ${num} and Number is even.`);
+	  }
+	  else{
+	    console.log(`The number entered is ${num} and Number is odd.`);
+	  }	
+	}
+      }
+      even_odd(number); 
+  </script>  
+</body>
+</html>

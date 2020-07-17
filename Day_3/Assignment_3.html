@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Marks & Grade</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+  <h1 align="center">Marks & Grade</h1>
+  <h3><mark>Press F12 to see output in console.</mark></h3>
+  <script>
+	let marks = +prompt("Enter your marks : ");
+	let result = (marks>=90) ? `Marks are ${marks} and grade is O`:(marks>=80) ? `Marks are ${marks} and grade is A+`:(marks>=70) ? `Marks are ${marks} and grade is A`:(marks>=60) ? `Marks are ${marks} and grade is B+`:(marks>=50) ? `Marks are ${marks} and grade is B`:`Marks are ${marks} and grade is U`;
+	console.log(result);
+  </script>  
+</body>
+</html>
