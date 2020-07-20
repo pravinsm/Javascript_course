@@ -1,1 +1,1 @@
-# Javascript_course
+# Javascript course from Let's Upgarde!
