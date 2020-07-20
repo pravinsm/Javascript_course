@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Calculator</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+<style>
+.main_container{
+position : relative;
+justify-content: center;
+display: grid;
+
+}
+.container{
+width: 220px;
+height: auto;
+overflow: hidden;
+background-color: rgba(0,0,0,0.8);
+padding:5px;
+justify-content: center;
+display: grid;
+
+}
+#txtField{
+border: none;
+width:200px;
+text-align: right;
+
+font-size:28px;
+background-color: transparent;
+color: #ccff00;
+}
+.btn{
+display: grid;
+grid-gap:5px;
+grid-template-columns: 50px 50px 50px 50px;
+}
+button{
+background-color: transparent;
+border-radius: 100%;
+padding:10px;
+margin:5px;
+border: none;
+color: white;
+font-size:16px;
+}
+.op2{
+color: #ff8300;
+}
+.op1{
+color:  #15f4ee;
+}
+button:hover{
+cursor: pointer;
+color:#ccff00;
+}
+</style>
+</head>
+<body>
+<div class= main_container>
+  <h1 align="center">Calculator</h1>
+  <div class="container">
+  <input type="text" id="txtField" disabled>
+  <div class="btn">
+    <button class="op2" id="clear" onclick="clearFlied()">C</button>
+    <button class="op2"id="%" onclick="percent()">%</button>
+    <button class="op2" id="sqrt" onclick="squareroot()">sqrt</button>
+    <button class="op1" id="/" onclick="inputText(id)">/</button>
+    <button id="7" onclick="inputText(id)">7</button>
+    <button id="8" onclick="inputText(id)">8</button>
+    <button id="9" onclick="inputText(id)">9</button>
+    <button class="op1" id="x" onclick="inputText(id)">x</button>
+    <button id="4" onclick="inputText(id)">4</button>
+    <button id="5" onclick="inputText(id)">5</button>
+    <button id="6" onclick="inputText(id)">6</button>
+    <button class="op1" id="-" onclick="inputText(id)">-</button>
+    <button id="1" onclick="inputText(id)">1</button>
+    <button id="2" onclick="inputText(id)">2</button>
+    <button id="3" onclick="inputText(id)">3</button>
+    <button class="op1" id="+" onclick="inputText(id)">+</button>
+    <button id="AC" onclick="AllclearFlied()">AC</button>
+    <button id="0" onclick="inputText(id)">0</button>
+    <button id="." onclick="inputText(id)">.</button>
+    <button class="op1" id="=" onclick="result()">=</button>
+  </div>
+  </div>
+</div>
+  <script>
+	function inputText(v){
+	  document.getElementById("txtField").value+=v;
+	}
+	function result(){
+	  let ans=document.getElementById("txtField").value;
+          if(ans.includes("x" || "X")){
+            ans=ans.replace('x','*');
+	  }
+	  try{
+	    document.getElementById("txtField").value=eval(ans);
+	  }catch(error){
+	     document.getElementById("txtField").value="Invalid Expression!";
+	     console.log(error);
+	  }
+	}
+	function clearFlied(){
+	  let ans=document.getElementById("txtField").value;
+          document.getElementById("txtField").value=ans.slice(0,-1);
+	}
+	function AllclearFlied(){
+          document.getElementById("txtField").value="";
+	}
+	function percent(){
+	  let ans=document.getElementById("txtField").value;
+	  let p;
+	  if(ans.includes("x" || "X")){
+            ans=ans.replace('x','*');
+	  }
+	  if(ans.includes("-")){
+	    ans=ans.split("-");
+	    p=ans[0]-((ans[0]/100)*ans[1]);
+	  }
+	  if(ans.includes("+")){ans=ans.split("+");p=+ans[0]+((+ans[0]/100)*+ans[1])}
+	  if(ans.includes("*")){ans=ans.split("*");p=(ans[0]/100)*ans[1];}
+          document.getElementById("txtField").value=p;
+	}
+	function squareroot(){
+	  let ans=document.getElementById("txtField").value;
+	  ans=Math.sqrt(ans).toFixed(5);
+	  document.getElementById("txtField").value=ans;
+	}
+  </script>  
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Destructure</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+  <h1 align="center">Destructure</h1>
+  <h3><mark>Press F12 to see output in console.</mark></h3>
+  <script>
+	const student={name:"Helsinki",age:24,projects:{dicegame:"Two player dice game using JavaScript"}}
+	let {name,age,projects:{dicegame}}=student;
+	console.log(name);
+	console.log(age);
+	console.log(dicegame);
+  </script>  
+</body>
+</html>

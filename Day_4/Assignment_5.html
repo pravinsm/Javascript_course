@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Rewarding Employees</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+  <h1 align="center">Rewarding Employees</h1>
+  <h3><mark>Press F12 to see output in console.</mark></h3>
+  <script>
+      function reward_emp(){	
+	sales=prompt("Enter the number of sales : ");
+	if(sales>=0 && sales<=5000){cp=2;commission=sales*(cp/100);}
+	else if(sales>5000 && sales<=10000){cp=5;commission=sales*(cp/100);}
+	else if(sales>10000 && sales<=20000){cp=7;commission=sales*(cp/100);}
+	else if(sales>20000){cp=10;commission=sales*(cp/100);}
+	else{console.log("Invalid Input!");reward_emp();}
+      }
+      let sales,commission,cp;
+      reward_emp();
+      console.log(`As per your sales of ${sales}, your ${cp}% of reward commission is ${commission}.`)
+  </script>  
+</body>
+</html>
