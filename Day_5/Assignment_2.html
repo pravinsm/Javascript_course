@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Class</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+  <h1 align="center">Class</h1>
+  <h3><mark>Press F12 to see output in console.</mark></h3>
+  <script>
+	class User{
+	  constructor(name,age,email){
+	    this.name=name;
+	    this.age=age;
+	    this.email=email;
+	    this.luCoins = 0;
+            this.courses = [];
+	  }
+	  static greet(){
+	    console.log(`Hello, welcome !`);
+	  }
+	  login(){
+	    console.log(`${this.name}, has logged in`);
+            return this;
+	  }
+	  logout(){
+	    console.log(`${this.name}, has logged out`);
+            return this;
+	  }
+	  getDetails(){
+	    console.log(`Name is ${this.name} \nEmail is ${this.email} \nLucoins are ${this.luCoins} \nCourses are ${this.courses}`);
+            return this;
+          }
+	}
+	class Moderator extends User{
+	  addCoins(user){
+	    user.luCoins++;
+            console.log(`ADDED! : ${user.name} has ${user.luCoins} lucoins`);
+            return this;
+          }
+          removeCoins(user){
+	    if(user.luCoins>0){
+              user.luCoins--;
+              console.log(`REMOVED! : ${user.name} has ${user.luCoins} lucoins`);}
+            else{
+              console.log(`${user.name} has 0 lucoins.`);
+            }
+            return this;
+          }
+	}
+	class Admin extends Moderator{
+           addCourse(user,course){
+             user.courses.push(course);
+             console.log(user);
+           }
+           removeCourse(user,course){
+             let index=user.courses.indexOf(course);
+             user.courses.splice(index,1);
+             console.log(`${user.name}'s, ${course} course is removed.`);
+             console.log(user);
+           }
+	   deleteUser(user){
+             users = users.filter(i =>{
+               return i.email != user.email; 
+             })
+	     console.log(`Admin has removed the ${user.name} !`);
+           }
+        }
+	let user_1 = new User('Hunt',21,'Hunt@.com');
+	let user_2 = new User('Vector',19,'Vector@.com');
+	let user_3 = new User('Victor',18,'Victor@.com');
+	let mod_manoj = new Moderator('Manoj',20,'manoj@gmail.com');
+	let admin_pravin = new Admin('pravin',21,'pravin@gmail.com');
+	let users=[user_1,user_2,mod_manoj,admin_pravin];	
+
+	user_1.login();
+	User.greet();
+	
+	mod_manoj.addCoins(user_1);
+	mod_manoj.addCoins(user_1);
+	admin_pravin.addCourse(user_1,"Python");
+	admin_pravin.addCourse(user_1,"Javascript");
+	admin_pravin.addCourse(user_1,"R language");
+	mod_manoj.removeCoins(user_1);
+	admin_pravin.removeCourse(user_1,"R language");
+
+	user_1.getDetails();
+	user_1.logout();
+
+	user_2.login();
+	User.greet();
+	
+	mod_manoj.addCoins(user_2);
+	mod_manoj.addCoins(user_2);
+	admin_pravin.addCourse(user_2,"Python");
+	admin_pravin.addCourse(user_2,"Javascript");
+	admin_pravin.addCourse(user_2,"R language");
+	mod_manoj.removeCoins(user_2);
+	admin_pravin.removeCourse(user_2,"Python");
+
+	user_2.getDetails();
+	user_2.logout();
+
+	admin_pravin.deleteUser(user_3);
+  </script> 
+</body>
+</html>

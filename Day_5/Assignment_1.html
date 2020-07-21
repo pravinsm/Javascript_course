@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Filter</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+  <h1 align="center">Filter</h1>
+  <h3><mark>Press F12 to see output in console.</mark></h3>
+  <script>
+	let num;
+	let arr=[];
+	function inputnum(){
+	  num= +prompt("Enter a positive number : ");
+	  if(num <0){
+	    inputnum();
+	  }
+	}
+        inputnum();
+	for(i=1;i<=num;i++){
+	  arr.push(i); 
+	}
+	let odd = arr.filter(odd_item => odd_item % 2 != 0);
+	let odd_cubes = odd.map(cube_item => Math.pow(cube_item,3));
+	console.log("Odd Numbers Array = ",odd);
+	console.log("Cube's of Odd Number's Array = ",odd_cubes);
+  </script> 
+</body>
+</html>
