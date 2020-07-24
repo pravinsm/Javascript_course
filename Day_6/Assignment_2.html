@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Multiplication Tables</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+  <h1 align="center">Multiplication Tables</h1>
+  <div>
+    Enter a Number : <input type="text" id=num placeholder="5">
+    <button type="button" onclick="calc_tables()">View Tables</button>
+  </div>
+  <div id="tables_display"></div>
+  <script>
+	let view=document.getElementById("tables_display");
+	let non_digit=/[^0-9]/g;
+	function calc_tables(){
+	  view.innerHTML="";
+	  let num=document.getElementById("num").value;
+	  
+	  if(num==""|| num.match(non_digit)){
+	     view.style.color="red";
+	     view.innerHTML+=`<p>Please enter a number!</p>`;
+	  }
+	  else{
+       	    for(i=1;i<11;i++){
+	      view.style.color="green";
+	      view.innerHTML+=`<p>${num} x ${i} = ${num*i}</p>`;
+	    }
+	  }
+	}
+	
+	
+  </script> 
+</body>
+</html>

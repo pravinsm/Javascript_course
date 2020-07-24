@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Background Color Change</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<style>
+body{
+background-color: red;
+}
+</style>
+<body>
+  <h1 align="center">Background Color Change</h1>
+  <h3><mark>Every 5 secs background color will change!</mark></h3>
+  <script>
+	let arr=["red","blue","green","silver","violet"];
+	let i=1;
+	let change=()=>{
+	  document.body.style.backgroundColor=arr[i];
+	  i=i+1;
+	  if(i==arr.length){
+	    i=0
+	  }
+	}
+	setInterval(change,5000);
+  </script> 
+</body>
+</html>

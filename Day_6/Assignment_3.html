@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Let's Upgrade</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+<style>
+*{
+padding:0;
+margin:0;
+}
+h1{
+display: flex;
+justify-content: center;
+}
+.container{
+background-color: rgba(255,0,0,.6);
+padding:10px;
+position: relative;
+}
+#mode{
+position: absolute;
+right:3px;
+top:3px;
+border-radius:20px;
+padding:7px;
+border: none;
+color: white;
+background-color: rgba(0,0,0,.5)	 ;
+
+}
+#Time{
+position: absolute;
+right:3px;
+bottom:2px;
+font-size:15px;
+}
+#mode:hover{
+background-color: black;
+cursor: pointer;
+}
+.darkmode{
+background-color: black;
+color:#fff;
+}
+#welcome{
+margin:5px;
+padding:2px;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+  <h1>Let's Upgrade</h1>
+  <button id="mode" onclick="Mode()">Dark-Mode</button>
+  <p id="Time"></p>
+  </div>
+  <h3 id="welcome"></h3>
+  
+  <script>
+	let timeView=document.getElementById("Time");
+	let btn=document.getElementById("mode");
+	let name=prompt("Enter your name :");
+	let welcome=document.getElementById("welcome");
+	welcome.innerText=`Welcome to Javascript Essential!, ${name.toUpperCase()}`;
+	function time(){
+	  let time= new Date().toLocaleTimeString();
+	  timeView.innerText=time;
+	}
+	setInterval(time,1000);
+	function Mode(){
+	  document.body.classList.toggle('darkmode');
+	  if(btn.className=="changed"){
+	    btn.className= "";
+	    btn.innerText="Dark-Mode";
+	  }
+	  else{
+	    btn.className="changed";
+	    btn.innerText="Light-Mode"
+	  }
+	}
+  </script>
+</body>
+</html>
